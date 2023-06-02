@@ -1,0 +1,13 @@
+name: "Test Cgroups"
+on:
+  workflow_dispatch:
+  
+jobs:
+  build_infra_resources:
+    name: "Build Autograder Infrastructure"
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: print cmdline
+        run: |
+          cat /proc/cmdline
