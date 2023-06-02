@@ -11,3 +11,17 @@ jobs:
       - name: print cmdline
         run: |
           cat /proc/cmdline
+      
+      - name: print sys directory
+        run: |
+          cd /sys
+          ls -al
+          cd fs/
+          ls -al
+      
+      - name: install cgroups tool
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cgroup-tools
+          sudo cgcreate -g cpu,cpuacct:test_group
+          sudo cgdelete -g cpu,cpuacct:test_group
