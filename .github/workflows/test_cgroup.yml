@@ -18,6 +18,8 @@ jobs:
           ls -al
           cd fs/
           ls -al
+          cd cgroup
+          ls -al
       
       - name: install cgroups tool
         run: |
